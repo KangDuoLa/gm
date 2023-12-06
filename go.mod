@@ -1,6 +1,6 @@
-module github.com/tjfoc/gmsm
+module github.com/KangDuoLa/gmsm
 
-go 1.14
+go 1.17
 
 require (
 	github.com/golang/protobuf v1.4.2
