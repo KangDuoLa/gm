@@ -18,14 +18,14 @@
 ## Go包安装
 
 ```bash
-go get -u github.com/tjfoc/gmsm
+go get -u github.com/KangDuoLa/gmsm
 ```
 ## SM2椭圆曲线公钥密码算法
 
 >   SM2椭圆曲线公钥密码算法 Public key cryptographic algorithm SM2 based on elliptic curves
 
 - 遵循的SM2标准号为： GM/T 0003.1-2012、GM/T 0003.2-2012、GM/T 0003.3-2012、GM/T 0003.4-2012、GM/T 0003.5-2012、GM/T 0009-2012、GM/T 0010-2012
-- go package： `github.com/tjfoc/gmsm/sm2`
+- go package： `github.com/KangDuoLa/gmsm/sm2`
 
 ### 代码示例
 
@@ -61,7 +61,7 @@ go get -u github.com/tjfoc/gmsm
 > SM3密码杂凑算法 - SM3 cryptographic hash algorithm
 
 - 遵循的SM3标准号为： GM/T 0004-2012
-- g package：`github.com/tjfoc/gmsm/sm3`
+- g package：`github.com/KangDuoLa/gmsm/sm3`
 - `type SM3 struct` 是原生接口hash.Hash的一个实现
 
 ### 代码示例
@@ -79,13 +79,13 @@ go get -u github.com/tjfoc/gmsm
 > SM4分组密码算法 - SM4 block cipher algorithm
 
 - 遵循的SM4标准号为:  GM/T 0002-2012
-- go package：`github.com/tjfoc/gmsm/sm4`
+- go package：`github.com/KangDuoLa/gmsm/sm4`
 
 ### 代码示例
 
 ```Go
     import  "crypto/cipher"
-    import  "github.com/tjfoc/gmsm/sm4"
+    import  "github.com/KangDuoLa/gmsm/sm4"
     import "fmt"
 
     func main(){
@@ -124,7 +124,7 @@ go get -u github.com/tjfoc/gmsm
 - 国密SSL协议遵循标准：《GM/T 0024-2014 SSL VPN技术规范》
 - **国密SSL协议目前升级为TLCP协议，遵循《GBT 38636-2020 信息安全技术 传输层密码协议》**，新增了SM4的GCM加密模式。
 
-国密SSL使用详情见文档： [《tjfoc 国密SSL协议快速入门》](gmtls/websvr/README.md)
+国密SSL使用详情见文档： [《KangDuoLa 国密SSL协议快速入门》](gmtls/websvr/README.md)
 
 示例入口：
 
