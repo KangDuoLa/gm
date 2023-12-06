@@ -5,11 +5,16 @@ import (
 	"math/big"
 )
 
+func parity( num uint ) uint {
+	return num & 1
+}
+
 func Decompress(a []byte) *PublicKey {
 	var aa, xx, xx3 sm2P256FieldElement
 
 	P256Sm2()
 	x := new(big.Int).SetBytes(a[1:])
+
 	curve := sm2P256
 	sm2P256FromBig(&xx, x)
 	sm2P256Square(&xx3, &xx)       // x3 = x ^ 2
@@ -20,9 +25,10 @@ func Decompress(a []byte) *PublicKey {
 
 	y2 := sm2P256ToBig(&xx3)
 	y := new(big.Int).ModSqrt(y2, sm2P256.P)
-	if getLastBit(y) != uint(a[0]) {
+	if getLastBit(y) != parity( uint(a[0] ) ) { // Changde by DZK in 20231206
 		y.Sub(sm2P256.P, y)
 	}
+
 	return &PublicKey{
 		Curve: P256Sm2(),
 		X:     x,
